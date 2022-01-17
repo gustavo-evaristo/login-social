@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import Home from './src/screens/Home';
+import Routes from './src/routes';
 
-const App: FC = () => <Home />;
+const App: FC = () => <Routes />;
 
 export default App;

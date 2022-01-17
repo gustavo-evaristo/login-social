@@ -13,7 +13,7 @@ import {
   Sign,
 } from './styles';
 
-const Home: FC = () => (
+const Welcome: FC = () => (
   <Container>
     <Image source={Avatar} />
     <ContentText>
@@ -32,4 +32,4 @@ const Home: FC = () => (
   </Container>
 );
 
-export default Home;
+export default Welcome;
