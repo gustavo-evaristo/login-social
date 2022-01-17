@@ -21,7 +21,7 @@ export const ContentText = styled.View`
 
 export const Title = styled.Text`
   font-size: 31px;
-  font-family: "Poppins-Medium"
+  font-family: "Poppins-SemiBold"
   text-align: center;
   margin-bottom: 20px;
   color: #202024;
