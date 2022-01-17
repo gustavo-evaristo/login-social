@@ -1,12 +1,25 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {AppRoutes} from './stack.routes';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Welcome from '../screens/Welcome';
+import Register from '../screens/Register';
 
-const Routes: React.FC = () => (
+const {Navigator, Screen} = createNativeStackNavigator();
+
+const Routes = () => (
   <NavigationContainer>
-    <StatusBar hidden />
-    <AppRoutes />
+    <Navigator
+      screenOptions={{
+        headerShown: false,
+        contentStyle: {
+          backgroundColor: 'white',
+        },
+        animation: 'fade',
+      }}
+      initialRouteName="welcome">
+      <Screen name="welcome" component={Welcome} />
+      <Screen name="register" component={Register} />
+    </Navigator>
   </NavigationContainer>
 );
 
