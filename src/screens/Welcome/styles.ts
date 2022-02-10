@@ -49,6 +49,7 @@ export const Button = styled.TouchableOpacity`
   border: none;
   border-radius: 8px;
   margin: 15px 0;
+  box-shadow: 0 0 8px #20202450;
 `;
 
 export const ContentButton = styled.View`

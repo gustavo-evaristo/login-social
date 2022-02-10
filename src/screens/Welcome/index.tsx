@@ -18,6 +18,7 @@ const Welcome: FC = () => {
   const navigation = useNavigation<any>();
 
   const toRegister = () => navigation.navigate('register');
+  const toSign = () => navigation.navigate('sign');
 
   return (
     <Container>
@@ -33,7 +34,7 @@ const Welcome: FC = () => {
         <Button onPress={toRegister}>
           <TextButton>Register</TextButton>
         </Button>
-        <Sign>Sign</Sign>
+        <Sign onPress={toSign}>Sign</Sign>
       </ContentButton>
     </Container>
   );

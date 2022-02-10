@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Welcome from '../screens/Welcome';
 import Register from '../screens/Register';
+import Sign from '../screens/Sign';
 
 const {Navigator, Screen} = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const Routes = () => (
       initialRouteName="welcome">
       <Screen name="welcome" component={Welcome} />
       <Screen name="register" component={Register} />
+      <Screen name="sign" component={Sign} />
     </Navigator>
   </NavigationContainer>
 );
