@@ -27,15 +27,20 @@ import {
 const Register: FC = () => {
   const [username, setusername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [confirmPassword, setConfirmPassword] = useState<string>('');
 
   const navigation = useNavigation<any>();
 
   const toSign = () => navigation.navigate('sign');
 
   const register = async () => {
-    if (!isEmpty(username) && !isEmpty(password)) {
-      await Store.set('username', username);
-      await Store.set('password', password);
+    if (
+      !isEmpty(username) &&
+      !isEmpty(password) &&
+      password === confirmPassword
+    ) {
+      await Store.set('username', JSON.stringify(username));
+      await Store.set('password', JSON.stringify(password));
     }
 
     return Toast.error('Invalid Fields');
@@ -60,6 +65,13 @@ const Register: FC = () => {
           placeholder="Password"
           onChange={setPassword}
           value={password}
+          secureTextEntry
+        />
+
+        <InputPassword
+          placeholder="Confirm password"
+          onChange={setConfirmPassword}
+          value={confirmPassword}
           secureTextEntry
         />
 

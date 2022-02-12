@@ -2,6 +2,9 @@ import React, {FC, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import GoogleIcon from '../../assets/images/google-icon.png';
 import FacebookIcon from '../../assets/images/facebook-icon.png';
+import {Toast} from 'toastify-react-native';
+import Store from '../../store';
+import {isEmpty} from 'lodash';
 
 import {
   Container,
@@ -29,6 +32,18 @@ const Sign: FC = () => {
 
   const toRegister = () => navigation.navigate('register');
 
+  const sign = async () => {
+    if (isEmpty(username) && isEmpty(password)) {
+      return Toast.error('Invalid Fields');
+    }
+
+    const user = await Store.get('username');
+
+    if (user !== username || isEmpty(user)) {
+      return Toast.error('User does not exist');
+    }
+  };
+
   return (
     <Container>
       <ContentText>
@@ -48,7 +63,7 @@ const Sign: FC = () => {
           secureTextEntry
         />
 
-        <Button>
+        <Button onPress={sign}>
           <TextButton>Sign In</TextButton>
         </Button>
 
