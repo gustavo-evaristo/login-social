@@ -21,7 +21,7 @@ export const Title = styled.Text`
 `;
 
 export const Description = styled.Text`
-  font-size: 17px;
+  font-size: 14px;
   font-family: "Poppins-Light"
   text-align: center;
   color: #202024;
@@ -47,7 +47,7 @@ export const InputPassword = styled.TextInput`
   width: 100%;
   border-radius: 8px;
   padding: 20px 15px;
-  margin: 20px 0;
+  margin-top: 15px;
   color: #202024;
   font-family: 'Poppins-Regular';
 `;
@@ -60,6 +60,7 @@ export const Button = styled.TouchableOpacity`
   margin: 15px 0;
   box-shadow: 0 0 10px #20202450;
   width: 100%;
+  margin-top: 20px;
 `;
 export const TextButton = styled.Text`
   font-size: 15px;

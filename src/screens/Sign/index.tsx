@@ -48,7 +48,7 @@ const Sign: FC = () => {
           secureTextEntry
         />
 
-        <Button onPress={toRegister}>
+        <Button>
           <TextButton>Sign In</TextButton>
         </Button>
 
@@ -61,7 +61,7 @@ const Sign: FC = () => {
 
       <ContentRegister>
         <TextRegister>Not a member? </TextRegister>
-        <TextRegisterSpan>Register now</TextRegisterSpan>
+        <TextRegisterSpan onPress={toRegister}>Register now</TextRegisterSpan>
       </ContentRegister>
     </Container>
   );
