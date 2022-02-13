@@ -39,8 +39,10 @@ const Register: FC = () => {
       !isEmpty(password) &&
       password === confirmPassword
     ) {
-      await Store.set('username', JSON.stringify(username));
-      await Store.set('password', JSON.stringify(password));
+      await Store.set('username', username);
+      await Store.set('password', password);
+
+      return navigation.navigate('home');
     }
 
     return Toast.error('Invalid Fields');
@@ -57,20 +59,21 @@ const Register: FC = () => {
       <ContentInput>
         <InputUsername
           placeholder="Enter username"
-          onChange={setusername}
+          onChangeText={setusername}
           value={username}
         />
 
         <InputPassword
           placeholder="Password"
-          onChange={setPassword}
+          onChangeText={setPassword}
           value={password}
           secureTextEntry
+          onChn
         />
 
         <InputPassword
           placeholder="Confirm password"
-          onChange={setConfirmPassword}
+          onChangeText={setConfirmPassword}
           value={confirmPassword}
           secureTextEntry
         />

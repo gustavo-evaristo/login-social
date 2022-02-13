@@ -38,10 +38,13 @@ const Sign: FC = () => {
     }
 
     const user = await Store.get('username');
+    const userPassword = await Store.get('password');
 
-    if (user !== username || isEmpty(user)) {
+    if (user !== username || password !== userPassword || isEmpty(user)) {
       return Toast.error('User does not exist');
     }
+
+    return navigation.navigate('home');
   };
 
   return (
@@ -53,12 +56,12 @@ const Sign: FC = () => {
       <ContentInput>
         <InputUsername
           placeholder="Enter username"
-          onChange={setusername}
+          onChangeText={setusername}
           value={username}
         />
         <InputPassword
           placeholder="Password"
-          onChange={setPassword}
+          onChangeText={setPassword}
           value={password}
           secureTextEntry
         />
